@@ -7,12 +7,17 @@
 #include <linux/rtnetlink.h>
 #include <linux/netlink.h>
 #include <linux/nl80211.h>
+#include <linux/if_link.h>
+#include <net/if.h>
 #include <sys/ioctl.h>
 #include <sys/socket.h>
 #include <net/if.h>
+#include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
+#include "beacon.h"
 
 struct nl_sock *msg_start(int protocol);
 int msg_create_iface(struct nl_sock *socket, const char *iface_name);
